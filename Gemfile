@@ -12,6 +12,7 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'twitter', '~> 5.16'
 gem 'puma', '~> 3.3'
+gem 'bower-rails'
 
 group :development, :test do
   gem 'faker', '~> 1.6', '>= 1.6.3'
