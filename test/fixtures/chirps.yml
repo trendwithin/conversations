@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+chris:
+  name: chris
+  text: 140 Character Tweet
+  in_reply_to:
+  created_on: 2016-04-06 18:49:49
+
+bill:
+  name: bill
+  text: 140 Character Tweet Response
+  in_reply_to:
+  created_on: 2016-04-06 18:49:49

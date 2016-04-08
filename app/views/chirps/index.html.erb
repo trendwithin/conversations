@@ -1,0 +1,33 @@
+<div class="pad-color"></div>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Conversations
+      </a>
+    </div>
+</div><!-- /.container-fluid -->
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <section class="well">
+        <h1>Conversations You May Have Recently Missed</h1>
+      </section>
+      <article>
+        <% @chirps.each do |chirp|  %>
+        <div class="panel panel-primary">
+           <div class="panel-heading">
+              <h3 class="panel-title"><%= chirp.name %></h3>
+           </div>
+           <div class="panel-body">
+              <%= chirp.text %>
+           </div>
+           <div class="panel-footer">
+             <%= chirp.created_on.to_date %>
+           </div>
+        </div>
+        <% end %>
+      </article>
+    </div>
+  </div>
+</div>

@@ -70,6 +70,8 @@ GEM
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.10)
+    figaro (1.1.1)
+      thor (~> 0.14)
     formatador (0.2.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
@@ -243,6 +245,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   faker (~> 1.6, >= 1.6.3)
+  figaro (~> 1.1, >= 1.1.1)
   guard (~> 2.12.5)
   guard-minitest (~> 2.4.4)
   jbuilder (~> 2.0)
