@@ -13,7 +13,8 @@ class Chirp < ActiveRecord::Base
   end
 
   def Chirp.fetch_peeps
-    Peep.all
+    @peeps = Peep.all
+    self.fetch_tweets @peeps
   end
 
   def Chirp.fetch_tweets peeps
