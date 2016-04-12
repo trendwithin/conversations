@@ -15,7 +15,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <% if user_signed_in? %>
-          <li><%= link_to 'Add Follows', new_follow_path, class: 'active' %></li>
+          <li><%= link_to 'Add Peeps', new_peep_path, class: 'active' %></li>
           <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
         <% end %>
       </ul>
