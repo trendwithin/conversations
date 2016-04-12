@@ -2,6 +2,10 @@ class Chirp < ActiveRecord::Base
   validates :name, presence: true
   validates :text, presence: true
 
+  scope :within_twenty_four_hours, -> { where(created_at: 24.hours.ago..DateTime.now) }
+  scope :by_user_name, -> { order(name: :desc) }
+  scope :desc, -> { order(created_at: :desc) }
+
 
   def Chirp.twitter
     @twitter_client ||= Twitter::REST::Client.new do |config|
@@ -13,13 +17,14 @@ class Chirp < ActiveRecord::Base
   end
 
   def Chirp.fetch_peeps
-    Peep.all
+    @peeps = Peep.all
+    self.fetch_tweets @peeps
   end
 
   def Chirp.fetch_tweets peeps
     self.twitter unless Rails.env.test?
     peeps.each do |user_name|
-      if self.find_by(name: user_name).nil?
+      if self.find_by(name: user_name.name).nil?
         @twitter_client.user_timeline(user_name).take(1).collect do |tweet|
           self.save_tweet tweet
         end

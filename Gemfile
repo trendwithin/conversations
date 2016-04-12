@@ -14,6 +14,7 @@ gem 'twitter', '~> 5.16'
 gem 'puma', '~> 3.3'
 gem 'bower-rails'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
+gem 'devise', '~> 3.5', '>= 3.5.6'
 
 group :development, :test do
   gem 'faker', '~> 1.6', '>= 1.6.3'

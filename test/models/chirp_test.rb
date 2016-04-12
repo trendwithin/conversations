@@ -30,9 +30,4 @@ class ChirpTest < ActiveSupport::TestCase
     assert peeps.include? peeps(:bill)
     assert peeps.include? peeps(:chris)
   end
-
-  test '#fetch_tweets pulls a tweet from a page' do
-    Chirp.fetch_tweets peeps(:chris)
-  end
-
 end
