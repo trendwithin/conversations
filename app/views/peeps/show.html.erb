@@ -1,0 +1,8 @@
+<%= render 'shared/navbar' %>
+<p>
+  <strong>Name:</strong>
+  <%= @peep.name %>
+</p>
+
+<%= link_to 'Edit', edit_peep_path(@peep) %> |
+<%= link_to 'Back', peeps_path %>
