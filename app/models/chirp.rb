@@ -25,11 +25,11 @@ class Chirp < ActiveRecord::Base
     self.twitter unless Rails.env.test?
     peeps.each do |user_name|
       if self.find_by(name: user_name.name).nil?
-        @twitter_client.user_timeline(user_name).take(1).collect do |tweet|
+        @twitter_client.user_timeline(user_name.name).take(1).collect do |tweet|
           self.save_tweet tweet
         end
       else
-        @twitter_client.user_timeline(user_name, since_id: maximum(:tweet_id)).each do |tweet|
+        @twitter_client.user_timeline(user_name.name, since_id: maximum(:tweet_id)).each do |tweet|
           unless exists?(tweet_id: tweet.id)
             self.save_tweet tweet
           end
