@@ -15,6 +15,9 @@ gem 'puma', '~> 3.3'
 gem 'bower-rails'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'devise', '~> 3.5', '>= 3.5.6'
+gem 'twitter-text', '~> 1.12.0'
+gem 'memcachier', '~> 0.0.2'
+gem 'dalli', '~> 2.7', '>= 2.7.6'
 
 group :development, :test do
   gem 'faker', '~> 1.6', '>= 1.6.3'
