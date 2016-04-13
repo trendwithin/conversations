@@ -35,7 +35,7 @@ class Chirp < ActiveRecord::Base
       nil
       end
     end
-    expire_fragment('main_page_index')
+    ActionController::Base.new.expire_fragment('main_page_index')
   end
 
   private
